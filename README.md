@@ -13,7 +13,7 @@ func updateStatement(db *sql.DB, sql string) error
 ```
 
 ```go
-
+err = updateStatement(db, "insert into pix(id, title) values(103, 'One Hundred One')")
 ```
 
 
@@ -29,7 +29,11 @@ func selectStatement(db *sql.DB, sql string) ([]map[string]string, error)
 ```
 
 ```go
-
+	clist := []map[string]string{}
+	clist, _ = selectStatement(db, "SELECT customername FROM customers limit 2")
+	for i, x := range clist {
+		fmt.Println(i, x["customername"])
+	}
 ```
 
 Select Single Statement
@@ -43,7 +47,9 @@ func selectSingleStatement(db *sql.DB, sql string) (map[string]string, error)
 ```
 
 ```go
-
+	cdata := map[string]string{}
+	cdata, _ = selectSingleStatement(db, "SELECT customername FROM customers limit 1")
+	fmt.Println(cdata["customername"])
 ```
 
 Select Data
@@ -57,7 +63,9 @@ func selectData(db *sql.DB, sql string) (string, error)
 ```
 
 ```go
-
+	data := ""
+	data, _ = selectData(db, "SELECT customername FROM customers limit 1")
+	fmt.Println(data)
 ```
 
 
