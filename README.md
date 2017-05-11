@@ -68,5 +68,13 @@ func selectData(db *sql.DB, sql string) (string, error)
 	fmt.Println(data)
 ```
 
+Note
+
+Data are returned as string at the moment.
+
+Aims to keep the Query session open to a minimum, so the results are coppied to the App memory.
+
+The SQL statement needs to be safe, the code does not do that.
+
 
 
