@@ -5,9 +5,26 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-//var db *sql.DB
-//var err error
+//TODO
+func addRecord(db *sql.DB, data map[string]string) error {
 
+	return nil
+}
+
+//TODO
+func addMultipleRecord(db *sql.DB, dataList []map[string]string) error {
+	return nil
+}
+
+//TODO
+func updateRecord(db *sql.DB, data map[string]string) error {
+	return nil
+}
+
+//TODO
+func updateMultipleRecord(db *sql.DB, dataList []map[string]string) error {
+	return nil
+}
 
 func updateStatement(db *sql.DB, sql string) error {
 	_, errx := db.Exec(sql)
@@ -16,7 +33,6 @@ func updateStatement(db *sql.DB, sql string) error {
 	}
 	return nil
 }
-
 
 func selectStatement(db *sql.DB, sql string) ([]map[string]string, error) {
 	rows, err := db.Query(sql)
@@ -90,5 +106,3 @@ func selectData(db *sql.DB, sql string) (string, error) {
 	}
 	return data, nil
 }
-
-
